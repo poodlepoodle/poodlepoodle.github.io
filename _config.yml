@@ -16,23 +16,23 @@ lang: en
 prefer_datetime_locale:
 
 # Change to your timezone › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
-timezone:
+timezone: Asia/Seoul
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Chirpy                          # the main title
+title: ✨poodle.log()✨                          # the main title
 
-tagline: A text-focused Jekyll theme   # it will display as the sub-title
+tagline: 주니어 개발자 푸들푸들의<br/>개발 기록 블로그입니다.   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  A minimal, responsive, and powerful Jekyll theme for presenting professional writing.
+  poodlepoodle
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: ''
+url: 'https://poodlepoodle.github.io'
 
 github:
-  username: github_username             # change to your github username
+  username: poodlepoodle             # change to your github username
 
 twitter:
   username: twitter_username            # change to your twitter username
@@ -40,17 +40,18 @@ twitter:
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: your_full_name
-  email: example@doamin.com             # change to your email address
+  name: Eojin Choi
+  email: chammal97@naver.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
     - https://twitter.com/username      # change to your twitter homepage
-    - https://github.com/username       # change to your github homepage
+    - https://github.com/poodlepoodle       # change to your github homepage
+    - https://instagram.com/enfp._.oodle
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
 
-google_site_verification:               # fill in to your verification string
+google_site_verification: google_meta_tag_verification              # fill in to your verification string
 
 # ↑ --------------------------
 # The end of `jekyll-seo-tag` settings
