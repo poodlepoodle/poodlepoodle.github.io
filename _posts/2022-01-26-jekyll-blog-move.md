@@ -36,7 +36,7 @@ tags: [blog, jekyll, github blog]
 
 > 그래서...
 
-`-.giithub.io`로 호스팅하는 블로그를 사용하기 위해서 최근 며칠 동안 작업했다.  
+`-.github.io`로 호스팅하는 블로그를 사용하기 위해서 최근 며칠 동안 작업했다.  
 테마 적용 및 Github Action 연결 등의 _자세한 설치 과정_ 은
 `project > blog` 카테고리에 추가로 작성할 예정이다.  
 
