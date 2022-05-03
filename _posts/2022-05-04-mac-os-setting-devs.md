@@ -4,7 +4,7 @@ title: 🛠 Mac OS 처음부터 세팅하기 - 개발
 date: 2022-05-04 02:55:00 +0900
 published: true
 categories: [coding, mac os]
-tags: [mac os, xcode, vscode, zsh, github blog]
+tags: [mac os, xcode, vscode, zsh]
 ---
 
 # 0. 기본 사용자 설정까지 끝낸 단계
