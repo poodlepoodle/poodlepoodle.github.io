@@ -4,7 +4,7 @@ title: 🛠 Mac OS 처음부터 세팅하기 - 기본
 date: 2022-05-03 23:43:00 +0900
 published: true
 categories: [coding, mac os]
-tags: [mac os, xcode, vscode, zsh, github blog]
+tags: [mac os]
 ---
 
 # 0. 깡통 상태
@@ -115,6 +115,10 @@ poodleapps에는 추가로 설치한 프로그램들을 분류했다.
 # 3. 배경화면 설정
 
 [mesh gradients](https://products.ls.graphics/mesh-gradients/)
+
+# 4. 현재까지 결과
+
+![image](https://user-images.githubusercontent.com/6462456/166516525-0a32a19e-43fa-4d6e-97f1-652fda6f25ee.png)
 
 ---
 
