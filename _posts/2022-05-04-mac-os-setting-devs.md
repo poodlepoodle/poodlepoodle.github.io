@@ -19,7 +19,7 @@ tags: [mac os, xcode, vscode, zsh]
 ![image](https://user-images.githubusercontent.com/6462456/166204362-425d756b-7ded-4dba-977c-15dc7b1399d7.png)
 
 Xcode는 Mac 앱스토어에서 설치할 수 있다.  
-업데이트를 잘 안 하고 써서 몰랐는데 최신 버젼은 **Mac OS 12.0 Monterey 이상**을 필요로 한다고 한다.  
+업데이트를 잘 안 하고 써서 몰랐는데 최신 버전은 **Mac OS 12.0 Monterey 이상**을 필요로 한다고 한다.  
 내 맥북이 Big Sur까지만 지원하는 걸 어떻게 하리... 그냥 **이전 버전 다운로드** 누른다...  
 
 ## 1-1. Command Line Tools 설치
@@ -147,13 +147,14 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 ![image](https://user-images.githubusercontent.com/6462456/166490599-9c0e709f-129d-4fc9-bd9b-551aa0b823e5.png)
 
 자동으로 powerlevel10k의 configuration script가 실행된다.  
-취향에 맞게 적당히 (1)이나 (y) 골라주면서 넘어가면 됨  
+취향에 맞게 적당히 골라주면서 넘어가면 됨  
 만약 설정을 마쳤는데 다시 고르고 싶다면 `p10k configure` 실행 ㄱㄱ  
 
 ### 2-3-2. zsh 추가 커스터마이징
 
 - 명령어 실행 시마다 앞에 붙는 사용자 및 컴퓨터 없애기  
 
+{% raw %}
 ```zsh
 prompt_context() { 
 	if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then 
@@ -161,6 +162,7 @@ prompt_context() {
     fi 
 }
 ```
+{% endraw %}
 
 `~/.zshrc` 아래 부분에 위 내용을 붙여 주면 없앨 수 있다.  
 
@@ -273,7 +275,7 @@ git commit -m ":memo: [docs]: edit some posts"
 git push origin main
 ```
 
-굳이 로컬에서 안 돌려봐도 **typora** 같은 툴 써서 미리 보고 한번에 올리기만 해도 될 듯..  
+굳이 로컬에서 안 돌려봐도 **typora** 같은 마크다운 에디터로 미리 보고 발행할 때만 push해도 될 듯..  
 
 # 기타. 참고 링크
 
