@@ -4,7 +4,7 @@ title: 💡 신촌 연합 IT 창업동아리 CEOS 15기 활동 시작
 date: 2022-04-11 20:45:00 +0900
 published: true
 categories: [life]
-tags: [ceos, 15th]
+tags: [ceos]
 ---
 
 ## **개요**

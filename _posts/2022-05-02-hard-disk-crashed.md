@@ -7,8 +7,6 @@ categories: [life]
 tags: [fuck]
 ---
 
-# 하드 날라감
-
 ![D6GkmN2VUAE7m92](https://user-images.githubusercontent.com/6462456/166175947-4812bbef-14dd-4ef5-936b-402b0b392333.jpg)
 
 **왜 인생의 시련은 예고 없이 찾아올까?**  
