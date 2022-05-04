@@ -54,7 +54,7 @@ Mac OS의 기본 터미널을 사용할 수도 있지만,
 
 ### 2-1. ITerm 2 테마 설정
 
-#### 2-1-1. Color Scheme 설정 - Afterglow
+#### 2-1-1. Color Scheme 설정 - **Afterglow**
 
 ![image](https://user-images.githubusercontent.com/6462456/166436419-33dd9c5e-a025-4952-a1b2-a04405f5a50a.png)
 
@@ -63,7 +63,7 @@ Mac OS의 기본 터미널을 사용할 수도 있지만,
 위의 링크에서 `.itermcolors` 파일을 다운받은 후  
 **Preference > Profile > Colors** 설정에서 **Color Presets...**를 눌러 불러와준 후 적용한다.  
 
-#### 2-1-2. 폰트 설정 - Naver D2coding
+#### 2-1-2. 폰트 설정 - **Naver D2coding**
 
 ![image](https://user-images.githubusercontent.com/6462456/166438876-014731d3-a0b4-4a22-90ab-e42da4d7deb4.png)
 
@@ -72,7 +72,7 @@ Mac OS의 기본 터미널을 사용할 수도 있지만,
 위 링크에서 폰트 설치 후 **Profiles > Text**에서 적용  
 폰트 크기는 한 13px 쯤 설정하면 괜찮은듯  
 
-#### 2-1-3. Word jump 단축키 설정 - Natural Text Editing
+#### 2-1-3. Word jump 단축키 설정 - **Natural Text Editing**
 
 ![image](https://user-images.githubusercontent.com/6462456/166448868-bc518384-7722-4125-aae5-b24559bb4600.png)
 
@@ -126,7 +126,7 @@ Catalina 이후부터인가 Mac OS의 기본 터미널이 `bash`에서 `zsh`로 
 
 설치가 완료되면 굉장히 알록달록해진 걸 볼 수 있는데 이대로 쓸 건 아니니까 몇 가지 추가 설정을 해줘야 함  
 
-#### 2-3-1. zsh 테마 설정 - powerlevel10k
+#### 2-3-1. zsh 테마 설정 - **powerlevel10k**
 
 [테마 둘러보기](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes)  
 [powerlevel10k 설치 안내](https://github.com/romkatv/powerlevel10k#manual)  
@@ -196,7 +196,7 @@ touch .hushlogin
 
 Stable build로 설치  
 
-### 3-1. VScode 테마 설정 - Shades of Purple
+### 3-1. VScode 테마 설정 - **Shades of Purple**
 
 ![image](https://user-images.githubusercontent.com/6462456/166473998-a740ca49-f894-4dc9-8c56-f87dcaac29fe.png)
 
