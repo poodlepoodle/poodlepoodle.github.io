@@ -226,7 +226,7 @@ git config --global core.quotepath false
 
 계정 설정 및 한글 관련 몇가지 추가 설정을 해 준다.  
 
-## 5. Github Blog 관련 세팅
+## 5. Github Blog
 
 ```zsh
 git clone https://github.com/poodlepoodle/poodlepoodle.github.io.git
@@ -277,6 +277,102 @@ git push origin main
 
 굳이 로컬에서 안 돌려봐도 **typora** 같은 마크다운 에디터로 미리 보고 발행할 때만 push해도 될 듯..  
 
+## 6. React, Typescript
+
+하드 날라가면서 프론트엔드 과제 때 Prettier 다시 세팅해야겠다는
+걱정이 들었는데 정작 Node 날라간 건 생각 못했다....  
+
+### 6-1. Node.js 설치
+
+![image](https://user-images.githubusercontent.com/6462456/167136932-08b34465-b20d-45b7-9aac-aa4032e37370.png)
+
+[설치 링크](https://nodejs.org/en/)
+
+왼쪽의 **LTS**로 선택해서 다운로드 후 설치  
+
+```zsh
+sudo npm install npx -g
+```
+
+위 명령어를 통해 npx 최신 버전 설치  
+이미 파일이 있다는 둥 에러가 뜨는데 ㄱㅊ다고 함  
+
+```zsh
+node -v # v16.15.0
+npm -v #8.5.5
+npx -v #8.5.5
+```
+
+22-05-06 기준 설치된 버젼 체크  
+React 개발 시 node 버전은 13 이하, 17은 피해서 설치하라고 한다...  
+
+```zsh
+npm install
+```
+
+`react-scripts: command not found` 에러 보고 싶지 않다면  
+프로젝트 실행하기 전에 잊지 말자...  
+
+### 6-2. Styled-Components 설치
+
+```zsh
+npm install styled-components
+```
+
+Css 스타일링 방식 중 `Styled-Components`를 사용하기 위해 설치  
+
+![image](https://user-images.githubusercontent.com/6462456/167169820-8e2fa7c2-6130-48fe-b7fb-fd294174999c.png)
+
+VScode에서 Styled-Components **자동 완성 기능**을 사용하기 위한 확장임  
+
+### 6-3. Prettier 설정
+
+![image](https://user-images.githubusercontent.com/6462456/167231278-c3479af8-a98f-497c-9df5-1b17d87364e5.png)
+
+Extentions 탭에 들어가 Prettier를 설치  
+
+![image](https://user-images.githubusercontent.com/6462456/167231309-d736117e-afe5-4d43-b092-4f2b138d6638.png)
+
+Settings > **Prettier: Config Path**에 `.prettierrc` 입력  
+이렇게 하면 VSCode로 여는 모든 폴더의 `.prettierrc` 파일을 반영하여 에디터에서 파일을 저장할 때마다 적용됨  
+
+![image](https://user-images.githubusercontent.com/6462456/167264773-0fb30459-44c6-470b-9726-20f25dcd59fb.png)
+
+그 다음으로 Settings > **Default Formatter**를
+**Prettier - Code formatter**로 설정  
+
+![image](https://user-images.githubusercontent.com/6462456/167264808-f4bd430f-3cbf-4644-be31-ee9673924ec6.png)
+
+이어서 Settings > **Format On Save** 체크  
+
+```json
+{
+  "trailingComma": "es5",
+  "tabWidth": 2,
+  "semi": true,
+  "singleQuote": true
+}
+```
+
+마지막으로 프로젝트 루트 폴더에 `.prettierrc` 파일 생성 후
+위처럼 prettier 적용 규칙을 작성해 주면
+이제 저장할때마다 서식이 정리되어 적용된다.  
+
+```zsh
+# 1. Prettier를 글로벌로 설치
+sudo npm i -g prettier
+
+# 2. Prettier를 이용하여 폴더 혹은 파일을 검사
+prettier --check . # .(현재 디렉토리)
+
+# 3. 폴더 혹은 파일 내 전체 파일을 포맷팅하여 저장
+prettier --write . # 전체 디렉토리가 수정되니 주의
+```
+
+물론 Command Line으로 위와 같이 Prettier를 사용하는 방법도 있으나,  
+위처럼 VScode 확장을 이용해 설정하면 저장 시 자동 포맷팅이 적용되므로
+따로 commit 때마다 신경쓰지 않아도 된다는 점이 편리함  
+
 ## 기타. 참고 링크
 
 - [종합적으로 정리 잘 되어 있는 포스팅](https://subicura.com/2017/11/22/mac-os-development-environment-setup.html)
@@ -290,6 +386,8 @@ git push origin main
   [터미널에서 명령어로 VScode 열기](https://doyoon.tistory.com/1)
 - Github Blog
   [Mac OS Ruby 버젼 관련 이슈 rbenv로 해결](https://jojoldu.tistory.com/288)
+- Prettier
+  [프리티어(Prettier) 설정 안내](https://different-headphones-8fa.notion.site/Prettier-01b90450580847cd8b92245ffc448873)
 
 ---
 
