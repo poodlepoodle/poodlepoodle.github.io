@@ -373,6 +373,30 @@ prettier --write . # 전체 디렉토리가 수정되니 주의
 위처럼 VScode 확장을 이용해 설정하면 저장 시 자동 포맷팅이 적용되므로
 따로 commit 때마다 신경쓰지 않아도 된다는 점이 편리함  
 
+### 6-4. Gitmoji-cli 설정
+
+```zsh
+sudo npm i -g gitmoji-cli
+```
+
+Github commit message를 작성할 때 `gitmoji`를 활용하면 보기도 좋고
+단위 commit의 목적을 명확하게 나타낼 수 있어서 좋다.  
+설치할 때 sudo 안 붙으면 에러남  
+
+![image](https://user-images.githubusercontent.com/6462456/167769818-d56d98d0-d88c-4d64-997e-ac0d188630d0.png)
+
+```zsh
+git commit -m "메시지"
+
+# 대신...
+
+gitmoji -c
+```
+
+`gitmoji-cli`를 사용하면 gitmoji 홈페이지에 매번 들락날락 거리지 않아도
+적당한 키워드에 맞는 gitmoji를 추천해 준다.  
+매우 편리하다... 나만 매번 들락날락 했나??  
+
 ## 기타. 참고 링크
 
 - [종합적으로 정리 잘 되어 있는 포스팅](https://subicura.com/2017/11/22/mac-os-development-environment-setup.html)
