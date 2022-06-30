@@ -419,18 +419,18 @@ Anaconda의 설치에 관해서는 예전에 정리한 포스트가 있기 때�
 ## 기타. 참고 링크
 
 - [종합적으로 정리 잘 되어 있는 포스팅](https://subicura.com/2017/11/22/mac-os-development-environment-setup.html)
-- ITerm 2
-  [폰트 Naver D2coding으로 수정](https://acet.pe.kr/825)
-- zsh
-  [ITerm 2로 터미널 커스텀하기](https://ooeunz.tistory.com/21)
-  [Mac OS 터미널을 이쁘게 꾸며보자](https://bcp0109.tistory.com/341)
-  [macOS: 기본 쉘 (shell) 이 된 zsh 설정하기](https://xho95.github.io/macos/cli/shell/zsh/2020/03/04/Setting-Up-the-Zsh-shell-on-Mac.html)
-- VScode
-  [터미널에서 명령어로 VScode 열기](https://doyoon.tistory.com/1)
-- Github Blog
-  [Mac OS Ruby 버젼 관련 이슈 rbenv로 해결](https://jojoldu.tistory.com/288)
-- Prettier
-  [프리티어(Prettier) 설정 안내](https://different-headphones-8fa.notion.site/Prettier-01b90450580847cd8b92245ffc448873)
+- ITerm 2  
+  [폰트 Naver D2coding으로 수정](https://acet.pe.kr/825)  
+- zsh  
+  [ITerm 2로 터미널 커스텀하기](https://ooeunz.tistory.com/21)  
+  [Mac OS 터미널을 이쁘게 꾸며보자](https://bcp0109.tistory.com/341)  
+  [macOS: 기본 쉘 (shell) 이 된 zsh 설정하기](https://xho95.github.io/macos/cli/shell/zsh/2020/03/04/Setting-Up-the-Zsh-shell-on-Mac.html)  
+- VScode  
+  [터미널에서 명령어로 VScode 열기](https://doyoon.tistory.com/1)  
+- Github Blog  
+  [Mac OS Ruby 버젼 관련 이슈 rbenv로 해결](https://jojoldu.tistory.com/288)  
+- Prettier  
+  [프리티어(Prettier) 설정 안내](https://different-headphones-8fa.notion.site/Prettier-01b90450580847cd8b92245ffc448873)  
 
 ---
 
