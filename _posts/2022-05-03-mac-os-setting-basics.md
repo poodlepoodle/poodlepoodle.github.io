@@ -79,12 +79,13 @@ Dock 크기는 적당히 설정해 주고 **Dock 방향은 화면 오른쪽**으
 
 ## 2. 필수 프로그램들 설치
 
-![7  launchpad](https://user-images.githubusercontent.com/6462456/166196081-0606053b-8db3-489e-85b0-07bd512fefd7.png)
+![image](https://user-images.githubusercontent.com/6462456/175968925-a8e71a5d-0b64-4a8e-8a67-c1e7d5ede768.png)
+
 
 launchpad에서 실제로 안 쓰는 앱들이랑 자주 사용하는 프로그램들을 나눠서 폴더로 정리했다.  
 
-![image](https://user-images.githubusercontent.com/6462456/167329223-ff714dc3-599e-4c52-a144-350a1ef9e81f.png)
-_2022-05-09 최신화_
+![image](https://user-images.githubusercontent.com/6462456/175969033-5d92ce8f-a3a7-4cfb-b49f-d41235987a85.png)
+_2022-06-27 최신화_
 
 poodleapps에는 추가로 설치한 프로그램들을 분류했다.  
 (하드 날라가기 전에 깔았던 프로그램들 중 까먹은 것들이 있을 수도...)   
@@ -103,9 +104,8 @@ poodleapps에는 추가로 설치한 프로그램들을 분류했다.
 - **Polaris Office** / **한글 뷰어** : 과제 제출할 때 PPT나 한글 파일 열고 편집하기 위핢
 - **iMovie** : 영상 편집 프로그램, 명예교수님 강의 촬영 후 편집해서 드릴 때 사용함
   (주로 렌더링 돌리고 잠)
-- **Goodnotes** : 아이패드에서 더 많이 사용하지만 맥북에서 가끔 캘린더나 일정리스트 바로 확인하기 위해 설치
-  (icloud 연동하면 자동으로 떠서 편리함)
 - **Photoshop** : 1년짜리 월 11,000원 구독 플랜 가입해 놔서 울며 겨자 먹기로 쓰는 중
+- **Chrome** : 사파리를 편하게 쓰고 있음에도 크롬을 써야 하는 상황이 분명 존재한다...
 - 개발 관련 프로그램들은 다음 포스트에서 언급했으므로 제외함
 
 원래 앱 별로 설치 링크 포함해서 정리하려고 했으나  

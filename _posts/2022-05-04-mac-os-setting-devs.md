@@ -397,6 +397,25 @@ gitmoji -c
 적당한 키워드에 맞는 gitmoji를 추천해 준다.  
 매우 편리하다... 나만 매번 들락날락 했나??  
 
+## 7. Python
+
+영상 처리부터 시작해서 딥 러닝, 코딩 테스트 문제 풀이 등
+파이썬을 사용할 일도 많기 때문에, 관련 환경 설정 또한 필요하다.  
+
+### 7-1. Anaconda 설치
+
+![image](https://user-images.githubusercontent.com/6462456/176612299-aec8b9b9-fd94-415f-aa6f-aa944e8beed7.png)
+
+Mac OS에는 기본적으로 파이썬이 설치되어 있다.  
+다만, 3.0 이상의 버젼은 `python3` 명령어로 실행해야 하는 귀찮은
+부분들도 있고, 여러 프로젝트에서 쓰일 환경을 애초부터 분리해
+관리하는 게 여러 모로 편리하기 때문에 **Anaconda**를 설치한다.
+
+[설치 관련 포스트](https://poodlepoodle.github.io/posts/what-is-anaconda/)
+
+Anaconda의 설치에 관해서는 예전에 정리한 포스트가 있기 때문에
+따로 중복되는 내용을 다시 적지는 않겠다.  
+
 ## 기타. 참고 링크
 
 - [종합적으로 정리 잘 되어 있는 포스팅](https://subicura.com/2017/11/22/mac-os-development-environment-setup.html)
