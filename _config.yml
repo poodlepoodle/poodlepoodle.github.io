@@ -23,7 +23,7 @@ timezone: Asia/Seoul
 
 title: ✨poodle.log()✨                          # the main title
 
-tagline: 주니어 프론트엔드 개발자 푸들푸들의<br/>개발 기록 블로그입니다.   # it will display as the sub-title
+tagline: 주니어 프론트엔드 개발자<br/>푸들푸들의<br/>개발 기록 블로그입니다.   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   poodlepoodle
