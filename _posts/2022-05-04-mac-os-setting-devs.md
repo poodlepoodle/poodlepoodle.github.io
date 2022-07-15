@@ -416,6 +416,19 @@ Mac OS에는 기본적으로 파이썬이 설치되어 있다.
 Anaconda의 설치에 관해서는 예전에 정리한 포스트가 있기 때문에
 따로 중복되는 내용을 다시 적지는 않겠다.  
 
+- 터미널 실행 시 자동으로 **(base)** 환경 자동 활성화 해제  
+
+```zsh
+conda config --set auto_activate_base false
+```
+
+Anaconda를 설치하고 나서 터미널을 새로 켤 때마다
+`(base)` 환경이 활성화된 채로 열리는 것을 확인할 수 있다.  
+
+위의 명령어를 통해 자동 활성화를 해제하면
+매번 새로운 세션이나 터미널을 열 때
+딜레이가 눈에 띄게 덜 걸리는 것을 확인할 수 있다.  
+
 ## 기타. 참고 링크
 
 - [종합적으로 정리 잘 되어 있는 포스팅](https://subicura.com/2017/11/22/mac-os-development-environment-setup.html)
