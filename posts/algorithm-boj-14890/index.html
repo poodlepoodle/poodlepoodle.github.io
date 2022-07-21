@@ -1,0 +1,325 @@
+<!DOCTYPE html><html lang="en" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="generator" content="Jekyll v4.2.2" /><meta property="og:title" content="📄 백준 14890번 - 경사로 (구현)" /><meta property="og:locale" content="en" /><meta name="description" content="📄 문제 소개" /><meta property="og:description" content="📄 문제 소개" /><link rel="canonical" href="https://poodlepoodle.github.io/posts/algorithm-boj-14890/" /><meta property="og:url" content="https://poodlepoodle.github.io/posts/algorithm-boj-14890/" /><meta property="og:site_name" content="✨poodle.log()✨" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2022-07-21T06:35:56+09:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="📄 백준 14890번 - 경사로 (구현)" /><meta name="twitter:site" content="@twitter_username" /><meta name="google-site-verification" content="google_meta_tag_verification" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-07-21T06:35:56+09:00","datePublished":"2022-07-21T06:35:56+09:00","description":"📄 문제 소개","headline":"📄 백준 14890번 - 경사로 (구현)","mainEntityOfPage":{"@type":"WebPage","@id":"https://poodlepoodle.github.io/posts/algorithm-boj-14890/"},"url":"https://poodlepoodle.github.io/posts/algorithm-boj-14890/"}</script><title>📄 백준 14890번 - 경사로 (구현) | ✨poodle.log()✨</title><link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="✨poodle.log()✨"><meta name="application-name" content="✨poodle.log()✨"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://cdn.jsdelivr.net" ><link rel="dns-prefetch" href="https://cdn.jsdelivr.net" ><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css"><link rel="stylesheet" href="/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1/dist/magnific-popup.min.css"> <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script> <script type="text/javascript"> class ModeToggle { static get MODE_KEY() { return "mode"; } static get MODE_ATTR() { return "data-mode"; } static get DARK_MODE() { return "dark"; } static get LIGHT_MODE() { return "light"; } static get ID() { return "mode-toggle"; } constructor() { if (this.hasMode) { if (this.isDarkMode) { if (!this.isSysDarkPrefer) { this.setDark(); } } else { if (this.isSysDarkPrefer) { this.setLight(); } } } let self = this; /* always follow the system prefers */ this.sysDarkPrefers.addEventListener("change", () => { if (self.hasMode) { if (self.isDarkMode) { if (!self.isSysDarkPrefer) { self.setDark(); } } else { if (self.isSysDarkPrefer) { self.setLight(); } } self.clearMode(); } self.notify(); }); } /* constructor() */ get sysDarkPrefers() { return window.matchMedia("(prefers-color-scheme: dark)"); } get isSysDarkPrefer() { return this.sysDarkPrefers.matches; } get isDarkMode() { return this.mode === ModeToggle.DARK_MODE; } get isLightMode() { return this.mode === ModeToggle.LIGHT_MODE; } get hasMode() { return this.mode != null; } get mode() { return sessionStorage.getItem(ModeToggle.MODE_KEY); } /* get the current mode on screen */ get modeStatus() { if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) { return ModeToggle.DARK_MODE; } else { return ModeToggle.LIGHT_MODE; } } setDark() { $('html').attr(ModeToggle.MODE_ATTR, ModeToggle.DARK_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); } setLight() { $('html').attr(ModeToggle.MODE_ATTR, ModeToggle.LIGHT_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); } clearMode() { $('html').removeAttr(ModeToggle.MODE_ATTR); sessionStorage.removeItem(ModeToggle.MODE_KEY); } /* Notify another plugins that the theme mode has changed */ notify() { window.postMessage({ direction: ModeToggle.ID, message: this.modeStatus }, "*"); } } /* ModeToggle */ const toggle = new ModeToggle(); function flipMode() { if (toggle.hasMode) { if (toggle.isSysDarkPrefer) { if (toggle.isLightMode) { toggle.clearMode(); } else { toggle.setLight(); } } else { if (toggle.isDarkMode) { toggle.clearMode(); } else { toggle.setDark(); } } } else { if (toggle.isSysDarkPrefer) { toggle.setLight(); } else { toggle.setDark(); } } toggle.notify(); } /* flipMode() */ </script><body data-spy="scroll" data-target="#toc" data-topbar-visible="true"><div id="sidebar" class="d-flex flex-column align-items-end"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/" class="mx-auto"> <img src="/assets/profile.jpg" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title mt-3"> <a href="/">✨poodle.log()✨</a></div><div class="site-subtitle font-italic">주니어 프론트엔드 개발자<br/>푸들푸들의<br/>개발 기록 블로그입니다.</div></div><ul class="w-100"><li class="nav-item"> <a href="/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>HOME</span> </a><li class="nav-item"> <a href="/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>CATEGORIES</span> </a><li class="nav-item"> <a href="/tags/" class="nav-link"> <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i> <span>TAGS</span> </a><li class="nav-item"> <a href="/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>ARCHIVES</span> </a><li class="nav-item"> <a href="/about/" class="nav-link"> <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i> <span>ABOUT</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center"> <button class="mode-toggle btn" aria-label="Switch Mode"> <i class="fas fa-adjust"></i> </button> <span class="icon-border"></span> <a href="https://github.com/poodlepoodle" aria-label="github" target="_blank" rel="noopener"> <i class="fab fa-github"></i> </a> <a href="https://twitter.com/twitter_username" aria-label="twitter" target="_blank" rel="noopener"> <i class="fab fa-twitter"></i> </a> <a href=" javascript:location.href = 'mailto:' + ['chammal97','naver.com'].join('@')" aria-label="email" > <i class="fas fa-envelope"></i> </a> <a href="/feed.xml" aria-label="rss" > <i class="fas fa-rss"></i> </a></div></div><div id="topbar-wrapper"><div id="topbar" class="container d-flex align-items-center justify-content-between h-100 pl-3 pr-3 pl-md-4 pr-md-4"> <span id="breadcrumb"> <span> <a href="/"> Home </a> </span> <span>📄 백준 14890번 - 경사로 (구현)</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> Post</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="Search..."> </span> <span id="search-cancel" >Cancel</span></div></div><div id="main-wrapper" class="d-flex justify-content-center"><div id="main" class="container pl-xl-4 pr-xl-4"><div class="row"><div id="core-wrapper" class="col-12 col-lg-11 col-xl-9 pr-xl-4"><div class="post pl-1 pr-1 pl-md-2 pr-md-2"><h1 data-toc-skip>📄 백준 14890번 - 경사로 (구현)</h1><div class="post-meta text-muted"> <span> Posted <em class="" data-ts="1658352956" data-df="ll" data-toggle="tooltip" data-placement="bottom"> Jul 21, 2022 </em> </span><div class="d-flex justify-content-between"> <span> By <em> <a href="https://twitter.com/username">Eojin Choi</a> </em> </span><div> <span class="readtime" data-toggle="tooltip" data-placement="bottom" title="3192 words"> <em>17 min</em> read</span></div></div></div><div class="post-content"><h2 id="-문제-소개"><span class="mr-2"><strong>📄 문제 소개</strong></span><a href="#-문제-소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p><img data-src="https://user-images.githubusercontent.com/6462456/180086066-be7fc09d-a0cf-4bb0-b5b9-c0683ed8508b.png" alt="image" data-proofer-ignore> <img data-src="https://user-images.githubusercontent.com/6462456/179397380-90811803-dff8-406f-a7f8-ab5771cb46df.png" alt="image" data-proofer-ignore> <em>백준 14890번 : 경사로</em></p><p>링크 : <a href="https://www.acmicpc.net/problem/14890">https://www.acmicpc.net/problem/14890</a></p><p>입력 N에 따라 N * N 크기의 정사각형 모양 지도가 주어지고, 각 칸의 높이가 주어졌을 때 행 + 열 12개의 길 중에 지나갈 수 있는 길의 개수를 모두 출력하는 문제이다.</p><ol><li>모든 칸의 높이가 같음 -&gt; <strong>지나갈 수 있음</strong><li>칸의 높이가 달라질 경우 -&gt; <strong>지나갈 수 없음</strong><br /> <strong>그러나</strong>, 입력과 함께 주어진 L 길이 이상의 공간이 있다면 경사로를 놓아 높이가 1 차이나는 칸을 잇는다면 -&gt; <strong>지나갈 수 있음</strong></ol><p>지나갈 수 있는 길에 대한 규칙은 위와 같다.<br /> 다만, 위의 규칙에 따라 경사로가 이미 놓여졌다면 그 칸에 경사로를 중복해서 놓을 수는 없다.</p><p><img data-src="https://user-images.githubusercontent.com/6462456/180066566-a7bd7b1d-79be-43c4-a234-d5fd258a01eb.png" alt="image" data-proofer-ignore></p><p>예제로 들면, <code class="language-plaintext highlighter-rouge">3 3 2 2 2 2</code> 는 괜찮지만, <code class="language-plaintext highlighter-rouge">3 3 2 2 3 3</code> 은 가운데 <code class="language-plaintext highlighter-rouge">2 2</code> 부분에 경사로 2개가 놓아질 수 없으므로 지나갈 수 없는 길로 판정된다. (위 그림과 같은 원리)</p><h2 id="-문제풀이-과정"><span class="mr-2"><strong>📗 문제풀이 과정</strong></span><a href="#-문제풀이-과정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><h3 id="-일단-시도해-본-방법"><span class="mr-2"><strong>🧐 일단 시도해 본 방법</strong></span><a href="#-일단-시도해-본-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p>아주 간단하게 문제에 접근해서, 하나의 길에 대해 정반대 경로는 고려할 필요 없으므로 N * N 칸에 대한 경로는 총 <strong>12개</strong>를 고려해 보기로 생각했다.</p><p><img data-src="https://user-images.githubusercontent.com/6462456/180068061-b547621b-07a2-4e2f-a6b2-5000afcd9920.png" alt="image" data-proofer-ignore></p><ol><li>첫번째 칸의 높이를 <code class="language-plaintext highlighter-rouge">current</code>에 저장하고 flag를 <code class="language-plaintext highlighter-rouge">True</code>로 세팅<li>나머지 N-1개 칸에 대해 반복 : <code class="language-plaintext highlighter-rouge">new_height</code><br /> 2-1. 새로운 칸이 이전 칸과 같으면, <strong>넘어감</strong><br /> 2-2. 새로운 칸이 이전 칸보다 하나 높다면, 이전 칸부터 포함해서 왼쪽으로 L개의 칸 같은지 검사 후, 같지 않다면 flag를 False로 세팅<br /> 2-3. 새로운 칸이 이전 칸보다 하나 낮다면, 새로운 칸 포함 오른쪽으로 L개의 칸 같은지 검사 후, 같지 않다면 flag를 False로 세팅<br /> 2-4. 이외에는 칸의 높이가 2개 이상 차이나므로 flag를 False로 세팅<li>N-1개 칸을 전부 탐색한 결과 flag가 True라면, 갈 수 있는 경로 1 누적</ol><p>한 칸씩 높이를 검사해 가며 높이가 같은 경우는 넘어가고 높이가 달라지는 경우에만 경사로를 놓을 수 있는 조건인지 판단해 보기로 했다.</p><p>N개 칸으로 이루어진 12개 경로에 대해 각각 판단할 때, 위의 규칙대로 모든 칸을 검사해 나가면 N이 최대 <strong>100</strong>으로 주어질 수 있다고 했으므로 경사로를 놓기 위한 L개 칸을 검증하는 과정을 대충 O(N)으로 계산한다면 <strong>10^6</strong> 안에 문제를 풀 수 있겠다고 생각했다.</p><h3 id="-코드로-나타내면"><span class="mr-2"><strong>😉 코드로 나타내면..?</strong></span><a href="#-코드로-나타내면" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre><td class="rouge-code"><pre><span class="c1"># sys.stdin.readline() 사용
+</span><span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="c1"># 정사각형 모양의 칸의 너비 N, 경사로의 가로 길이 L 입력
+</span><span class="n">N</span><span class="p">,</span> <span class="n">L</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">sys</span><span class="p">.</span><span class="n">stdin</span><span class="p">.</span><span class="n">readline</span><span class="p">().</span><span class="n">rstrip</span><span class="p">().</span><span class="n">split</span><span class="p">())</span>
+
+<span class="c1"># 정사각형 모양의 칸들 높이 정보 입력
+</span><span class="n">maps</span> <span class="o">=</span> <span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">sys</span><span class="p">.</span><span class="n">stdin</span><span class="p">.</span><span class="n">readline</span><span class="p">().</span><span class="n">rstrip</span><span class="p">().</span><span class="n">split</span><span class="p">()))</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)]</span>
+
+<span class="c1"># 존재하는 12개 경로 중 지나갈 수 있는 길의 개수를 카운트하는 변수 0으로 초기화
+</span><span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></table></code></div></div><p>정사각형 모양의 칸들의 너비와 경사로의 가로 길이 등을 입력받고, 정사각형 모양의 높이 지도에 대한 정보 또한 입력받는다.</p><p>12개 경로에 대해 지나갈 수 있는 경로의 수를 세 주어야 하므로 <code class="language-plaintext highlighter-rouge">cnt</code> 또한 0으로 초기화한다.</p><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre><td class="rouge-code"><pre><span class="c1"># 열 방향의 N개 경로에 대해서 검사
+</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="c1"># 1. 첫번째 칸의 높이를 `current`에 저장하고
+</span>    <span class="n">current</span> <span class="o">=</span> <span class="n">maps</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="c1"># flag를 `True`로 세팅
+</span>    <span class="n">flag</span> <span class="o">=</span> <span class="bp">True</span>
+
+    <span class="c1"># 2. 나머지 N-1개 칸에 대해 반복 -&gt; `new_height` 
+</span>    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+        <span class="n">new_height</span> <span class="o">=</span> <span class="n">maps</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+
+        <span class="c1"># 2-1. 새로운 칸이 이전 칸과 같으면
+</span>        <span class="k">if</span> <span class="n">new_height</span> <span class="o">==</span> <span class="n">current</span><span class="p">:</span>
+            <span class="c1"># -&gt; 넘어감
+</span>            <span class="k">pass</span>
+    
+        <span class="p">...</span>
+</pre></table></code></div></div><p>하나의 경로는 N개의 옆으로 연결된 칸들을 검사하는 방식인데, 실제로는 맨 첫 칸을 고정하고 나머지 N-1개 칸을 비교하는 방식으로 수행된다.</p><p>그 과정에서 이전 칸의 높이는 <code class="language-plaintext highlighter-rouge">maps[i][j - 1]</code> 이며 <code class="language-plaintext highlighter-rouge">current</code>로, 현재 칸의 높이는 <code class="language-plaintext highlighter-rouge">maps[i][j]</code>를 가리키며 <code class="language-plaintext highlighter-rouge">new_height</code>로 처리한다.</p><p>가장 먼저, 이전 칸과 현재 칸의 높이가 같은 경우는 별다른 처리 없이 무시한다.</p><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+</pre><td class="rouge-code"><pre><span class="c1"># 열 방향의 N개 경로에 대해서 검사
+</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="p">...</span>
+
+        <span class="c1"># 2-2. 새로운 칸이 이전 칸보다 하나 높다면,
+</span>        <span class="k">elif</span> <span class="n">new_height</span> <span class="o">==</span> <span class="n">current</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">L</span><span class="p">:</span>
+                <span class="n">flag</span> <span class="o">=</span> <span class="bp">False</span>
+                <span class="k">break</span>
+
+            <span class="c1"># 이전 칸부터 포함해서 왼쪽으로 L개의 칸 같은지 검사 후,
+</span>            <span class="n">l_flag</span> <span class="o">=</span> <span class="bp">True</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+                <span class="c1"># 같지 않다면 flag를 False로 세팅
+</span>                <span class="k">if</span> <span class="n">current</span> <span class="o">!=</span> <span class="n">maps</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">k</span><span class="p">]:</span>
+                    <span class="n">l_flag</span> <span class="o">=</span> <span class="bp">False</span>
+                    <span class="k">break</span>
+            
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">l_flag</span><span class="p">:</span>
+                <span class="n">flag</span> <span class="o">=</span> <span class="bp">False</span>
+                <span class="k">break</span>
+    
+    <span class="p">...</span>
+</pre></table></code></div></div><p>만약 새로 마주한 칸의 높이가 <strong>1칸 높다면</strong>, <strong>이전 칸을 포함해 왼쪽으로 L개의 칸들</strong>이 같은 높이인지를 검사한다.<br /> 만약 조건을 만족한다면 이는 왼쪽에 경사로를 놓을 공간이 있음을 의미한다.</p><p>왼쪽으로 L개의 칸을 인덱싱하지 못하는 경우에 대해서는 예외 처리로 경사로가 놓일 수 없는 경우를 추가로 고려해 준다.</p><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+</pre><td class="rouge-code"><pre><span class="c1"># 열 방향의 N개 경로에 대해서 검사
+</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="p">...</span>
+
+        <span class="c1"># 2-3. 새로운 칸이 이전 칸보다 하나 낮다면,
+</span>        <span class="k">elif</span> <span class="n">new_height</span> <span class="o">==</span> <span class="n">current</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="n">N</span> <span class="o">-</span> <span class="n">L</span><span class="p">:</span>
+                <span class="n">flag</span> <span class="o">=</span> <span class="bp">False</span>
+                <span class="k">break</span>
+
+            <span class="c1"># 새로운 칸 포함 오른쪽으로 L개의 칸 같은지 검사 후,
+</span>            <span class="n">l_flag</span> <span class="o">=</span> <span class="bp">True</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+                <span class="c1"># 같지 않다면 flag를 False로 세팅  
+</span>                <span class="k">if</span> <span class="n">new_height</span> <span class="o">!=</span> <span class="n">maps</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">+</span> <span class="n">k</span><span class="p">]:</span>
+                    <span class="n">l_flag</span> <span class="o">=</span> <span class="bp">False</span>
+                    <span class="k">break</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">l_flag</span><span class="p">:</span>
+                <span class="n">flag</span> <span class="o">=</span> <span class="bp">False</span>
+                <span class="k">break</span>
+    
+    <span class="p">...</span>
+</pre></table></code></div></div><p>만약 새로운 칸이 이전 칸보다 <strong>하나 낮다면</strong>, <strong>현재 칸부터 포함해 오른쪽으로 L개의 칸들</strong>의 높이를 검사한다.</p><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre><td class="rouge-code"><pre><span class="c1"># 열 방향의 N개 경로에 대해서 검사
+</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="p">...</span>
+
+        <span class="c1"># 2-4. 이외에는 칸의 높이가 2개 이상 차이나므로,
+</span>        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># flag를 False로 세팅
+</span>            <span class="n">flag</span> <span class="o">=</span> <span class="bp">False</span>
+            <span class="k">break</span>
+
+        <span class="c1"># 다음 칸을 가리키기 전에 현재 칸을 이전 칸에 덮어씌우기
+</span>        <span class="n">current</span> <span class="o">=</span> <span class="n">new_height</span>
+
+    <span class="c1"># 3. N-1개 칸을 전부 탐색한 결과 flag가 True라면,
+</span>    <span class="k">if</span> <span class="n">flag</span><span class="p">:</span>
+        <span class="c1"># 갈 수 있는 경로 1 누적
+</span>        <span class="n">cnt</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></table></code></div></div><p>마지막으로, 위의 조건들에 속하지 않는 경우는 이전 칸 대비 현재 칸의 높이가 같지 않으면서 <strong>2칸 이상 차이나는 경우</strong>이므로, 경사로를 놓을 수 없다고 판단한다.</p><p>마지막으로, 이렇게 판단한 조건들로 flag가 <code class="language-plaintext highlighter-rouge">True</code>로 세팅되어 있으면 갈 수 있는 경로로, <code class="language-plaintext highlighter-rouge">False</code>로 세팅되어 있으면 갈 수 없는 경로로 판단해 <code class="language-plaintext highlighter-rouge">cnt</code>에 누적한다.</p><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+</pre><td class="rouge-code"><pre><span class="c1"># 행 방향의 N개 경로에 대해서 검사
+</span><span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="c1"># 1. 첫번째 칸의 높이를 `current`에 저장하고
+</span>    <span class="n">current</span> <span class="o">=</span> <span class="n">maps</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+    <span class="c1"># flag를 `True`로 세팅
+</span>    <span class="n">flag</span> <span class="o">=</span> <span class="bp">True</span>
+
+    <span class="c1"># 2. 나머지 N-1개 칸에 대해 반복 -&gt; `new_height` 
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+        <span class="n">new_height</span> <span class="o">=</span> <span class="n">maps</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+
+        <span class="p">...</span>
+
+        <span class="c1"># 2-2. 새로운 칸이 이전 칸보다 하나 높다면,
+</span>        <span class="k">elif</span> <span class="n">new_height</span> <span class="o">==</span> <span class="n">current</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">L</span><span class="p">:</span>
+                <span class="n">flag</span> <span class="o">=</span> <span class="bp">False</span>
+                <span class="k">break</span>
+
+            <span class="c1"># 이전 칸부터 포함해서 왼쪽으로 L개의 칸 같은지 검사 후,
+</span>            <span class="n">l_flag</span> <span class="o">=</span> <span class="bp">True</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+                <span class="c1"># 같지 않다면 flag를 False로 세팅
+</span>                <span class="k">if</span> <span class="n">current</span> <span class="o">!=</span> <span class="n">maps</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]:</span>
+                    <span class="n">l_flag</span> <span class="o">=</span> <span class="bp">False</span>
+                    <span class="k">break</span>
+    
+    <span class="p">...</span>
+</pre></table></code></div></div><p>나머지 행 방향으로의 6개 경로 또한 열 방향으로의 경로를 판단했던 로직과 똑같지만, 인덱싱 변수 i와 j의 위치가 바뀐다는 점을 고려해서 코드를 작성한다.</p><h3 id="-위의-전략에서-오류-발생"><span class="mr-2"><strong>😢 위의 전략에서 오류 발생</strong></span><a href="#-위의-전략에서-오류-발생" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p><img data-src="https://user-images.githubusercontent.com/6462456/180074769-8188b40e-5cce-489d-b691-7f034eda045f.png" alt="image" data-proofer-ignore></p><p>위 전략에 의해 코드를 작성해서 돌려 보자, 행 방향의 5번째 경로인 <code class="language-plaintext highlighter-rouge">3 3 2 2 3 3</code> 을 지나갈 수 있다고 잘못 판단했다.</p><p><img data-src="https://user-images.githubusercontent.com/6462456/180075195-16b973a5-152b-4789-82f1-141840eff290.png" alt="image" data-proofer-ignore></p><p>이는 경사로가 놓일 수 있는지의 조건을 각 칸에서 좌우로 판단했을 때는 당연히 놓을 수 있다고 판단했지만, 실제로는 경사로 2개가 동시에 넣어지게 되는 형태이므로 불가능한 경로로 판단되어야 하기 때문이다.</p><p><img data-src="https://user-images.githubusercontent.com/6462456/180075662-d3453207-3941-4aff-a615-77fe37e58221.png" alt="image" data-proofer-ignore></p><p>이를 해결하기 위해 문제에서 제시한 <strong>경사로가 놓일 수 없는 경우</strong>들을 모아서 보면, <strong>“한 칸에는 하나의 경사로”</strong> 만 위치할 수 있음을 알 수 있다.</p><h3 id="-수정된-문제-풀이-전략"><span class="mr-2"><strong>🧐 수정된 문제 풀이 전략</strong></span><a href="#-수정된-문제-풀이-전략" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p>위의 규칙을 추가로 반영해서 한 칸에 하나 이상의 경사로가 존재할 수 없도록 하면 전략을 수정할 수 있다.</p><ol><li>첫번째 칸의 높이를 <code class="language-plaintext highlighter-rouge">current</code>에 저장하고 flag를 <code class="language-plaintext highlighter-rouge">True</code>로 세팅<li>나머지 N-1개 칸에 대해 반복 -&gt; <code class="language-plaintext highlighter-rouge">new_height</code><br /> 2-1. 새로운 칸이 이전 칸과 같으면 -&gt; <strong>넘어감</strong><br /> 2-2. 새로운 칸이 이전 칸보다 하나 높다면 -&gt; 새로운 칸 왼쪽으로 L개의 칸 높이가 같으면서 <u>**기존에 경사로가 놓인 적 없는 칸들로만 구성되었는지**</u> 검사 후 같지 않다면 flag False로 세팅<br /> 2-3. 새로운 칸이 이전 칸보다 하나 낮다면 -&gt; 새로운 칸 포함 오른쪽으로 L개의 칸 높이가 같으면서 <u>**기존에 경사로가 놓인 적 없는 칸들로만 구성되었는지**</u> 검사 후 같지 않다면 flag False로 세팅<br /> 2-4. 이외에는 칸의 높이가 2개 이상 차이나므로 flag False로 세팅</ol><h3 id="-코드로-나타내면-1"><span class="mr-2"><strong>😉 코드로 나타내면..?</strong></span><a href="#-코드로-나타내면-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre><td class="rouge-code"><pre><span class="c1"># 열 방향의 N개 경로에 대해서 검사
+</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">current</span> <span class="o">=</span> <span class="n">maps</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">flag</span> <span class="o">=</span> <span class="bp">True</span>
+
+    <span class="c1"># =============== 추가된 부분 =============== #
+</span>    <span class="c1"># 각 칸에 하나의 경사로만 위치하도록 하기 위해 visited 리스트 선언
+</span>    <span class="n">visited</span> <span class="o">=</span> <span class="p">[</span><span class="bp">False</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)]</span>
+    <span class="c1"># ======================================== #
+</span>
+    <span class="p">...</span>
+</pre></table></code></div></div><p>각 칸에 경사로가 이미 놓아졌는지를 가리키기 위해서 <code class="language-plaintext highlighter-rouge">visited</code> 리스트를 선언했다.</p><div class="language-python highlighter-rouge"><div class="code-header"> <span data-label-text="Python"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+</pre><td class="rouge-code"><pre><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="p">...</span>
+
+    <span class="c1"># 2. 나머지 N-1개 칸에 대해 반복 -&gt; `new_height` 
+</span>    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+        <span class="n">new_height</span> <span class="o">=</span> <span class="n">maps</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+
+        <span class="p">...</span>
+
+        <span class="c1"># 2-2. 새로운 칸이 이전 칸보다 하나 높다면,
+</span>        <span class="k">elif</span> <span class="n">new_height</span> <span class="o">==</span> <span class="n">current</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span>
+            
+            <span class="p">...</span>
+
+            <span class="c1"># 이전 칸부터 포함해서 왼쪽으로 L개의 칸 같은지 검사 후,
+</span>            <span class="n">l_flag</span> <span class="o">=</span> <span class="bp">True</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+                <span class="c1"># 같지 않다면 flag를 False로 세팅
+</span>                <span class="c1"># =============== 추가된 부분 =============== #
+</span>                <span class="k">if</span> <span class="n">current</span> <span class="o">!=</span> <span class="n">maps</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">k</span><span class="p">]</span> <span class="ow">or</span> <span class="n">visited</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">k</span><span class="p">]:</span>
+                <span class="c1"># ======================================== #
+</span>                    <span class="n">l_flag</span> <span class="o">=</span> <span class="bp">False</span>
+                    <span class="k">break</span>
+            
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">l_flag</span><span class="p">:</span>
+                <span class="n">flag</span> <span class="o">=</span> <span class="bp">False</span>
+                <span class="k">break</span>
+            <span class="c1"># =============== 추가된 부분 =============== #
+</span>            <span class="k">else</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+                    <span class="n">visited</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+            <span class="c1"># ======================================== #
+</span></pre></table></code></div></div><p>이후 조건에서도 경사로를 놓을 수 있는지 탐색하는 과정에서 해당 칸에 이미 경사로가 놓인 경우 탐색을 중지하고 경사로를 놓을 수 없는 칸으로 판단한다.</p><p>만약 경사로를 놓을 수 있게 된 경우는 해당 칸들에 대해서 돌면서 <code class="language-plaintext highlighter-rouge">visited</code> 리스트의 값을 <code class="language-plaintext highlighter-rouge">True</code>로 세팅한다.</p><p><code class="language-plaintext highlighter-rouge">visited</code> 리스트는 각 경로를 이루는 N개 칸에 대해서만 판단하면 되므로 N 크기로 선언해서 사용했다.</p><hr /><p>이번 주에 푼 구현 문제 중 <strong>가장 많은 시간</strong>을 소요했다…</p><p>구현 및 시뮬레이션 문제를 풀 때 어느 정도 조건을 설정한 후 해당 조건에서 추가로 적용해 주어야 하는 동작이 생기면 빠르게 코드에 반영하는 것의 중요성을 느낀 문제였다.</p><h2 id="-코드"><span class="mr-2"><strong>💻 코드</strong></span><a href="#-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><script src="https://gist.github.com/poodlepoodle/b57b386d75a46593f639028e28a10958.js"></script><h2 id="-연관-개념"><span class="mr-2"><strong>📒 연관 개념</strong></span><a href="#-연관-개념" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><blockquote><ul><li>Implementation(구현)</ul></blockquote></div><div class="post-tail-wrapper text-muted"><div class="post-meta mb-3"> <i class="far fa-folder-open fa-fw mr-1"></i> <a href='/categories/algorithm/'>algorithm</a>, <a href='/categories/baekjoon/'>baekjoon</a></div><div class="post-tags"> <i class="fa fa-tags fa-fw mr-1"></i> <a href="/tags/algorithm/" class="post-tag no-text-decoration" >algorithm</a> <a href="/tags/baekjoon/" class="post-tag no-text-decoration" >baekjoon</a> <a href="/tags/implementation/" class="post-tag no-text-decoration" >implementation</a></div><div class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"><div class="license-wrapper"> This post is licensed under <a href="https://creativecommons.org/licenses/by/4.0/"> CC BY 4.0 </a> by the author.</div><div class="share-wrapper"> <span class="share-label text-muted mr-1">Share</span> <span class="share-icons"> <a href="https://twitter.com/intent/tweet?text=%F0%9F%93%84+%EB%B0%B1%EC%A4%80+14890%EB%B2%88+-+%EA%B2%BD%EC%82%AC%EB%A1%9C+%28%EA%B5%AC%ED%98%84%29+-+%E2%9C%A8poodle.log%28%29%E2%9C%A8&url=https%3A%2F%2Fpoodlepoodle.github.io%2Fposts%2Falgorithm-boj-14890%2F" data-toggle="tooltip" data-placement="top" title="Twitter" target="_blank" rel="noopener" aria-label="Twitter"> <i class="fa-fw fab fa-twitter"></i> </a> <a href="https://www.facebook.com/sharer/sharer.php?title=%F0%9F%93%84+%EB%B0%B1%EC%A4%80+14890%EB%B2%88+-+%EA%B2%BD%EC%82%AC%EB%A1%9C+%28%EA%B5%AC%ED%98%84%29+-+%E2%9C%A8poodle.log%28%29%E2%9C%A8&u=https%3A%2F%2Fpoodlepoodle.github.io%2Fposts%2Falgorithm-boj-14890%2F" data-toggle="tooltip" data-placement="top" title="Facebook" target="_blank" rel="noopener" aria-label="Facebook"> <i class="fa-fw fab fa-facebook-square"></i> </a> <a href="https://t.me/share/url?url=https%3A%2F%2Fpoodlepoodle.github.io%2Fposts%2Falgorithm-boj-14890%2F&text=%F0%9F%93%84+%EB%B0%B1%EC%A4%80+14890%EB%B2%88+-+%EA%B2%BD%EC%82%AC%EB%A1%9C+%28%EA%B5%AC%ED%98%84%29+-+%E2%9C%A8poodle.log%28%29%E2%9C%A8" data-toggle="tooltip" data-placement="top" title="Telegram" target="_blank" rel="noopener" aria-label="Telegram"> <i class="fa-fw fab fa-telegram"></i> </a> <i id="copy-link" class="fa-fw fas fa-link small" data-toggle="tooltip" data-placement="top" title="Copy link" data-title-succeed="Link copied successfully!"> </i> </span></div></div></div></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted"><div class="access"><div id="access-lastmod" class="post"><div class="panel-heading">Recently Updated</div><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li><a href="/posts/algorithm-boj-1939/">📄 백준 1939번 - 중량제한 (BFS, 이분 탐색)</a><li><a href="/posts/algorithm-boj-14499/">📄 백준 14499번 - 주사위 굴리기 (구현)</a><li><a href="/posts/algorithm-boj-14503/">📄 백준 14503번 - 로봇 청소기 (구현)</a><li><a href="/posts/mac-os-setting-devs/">🛠 Mac OS 처음부터 세팅하기 - 개발</a><li><a href="/posts/algorithm-boj-4179/">📄 백준 4179번 - 불! (BFS)</a></ul></div><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/algorithm/">algorithm</a> <a class="post-tag" href="/tags/baekjoon/">baekjoon</a> <a class="post-tag" href="/tags/bfs/">bfs</a> <a class="post-tag" href="/tags/2021%EB%85%84/">2021년</a> <a class="post-tag" href="/tags/implementation/">implementation</a> <a class="post-tag" href="/tags/bruteforcing/">bruteforcing</a> <a class="post-tag" href="/tags/prefix-sum/">prefix sum</a> <a class="post-tag" href="/tags/study/">study</a> <a class="post-tag" href="/tags/2022%EB%85%84/">2022년</a> <a class="post-tag" href="/tags/c/">c++</a></div></div></div><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script><div id="toc-wrapper" class="pl-0 pr-4 mb-5"><div class="panel-heading pl-3 pt-2 mb-2">Contents</div><nav id="toc" data-toggle="toc"></nav></div></div></div><div class="row"><div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 pl-3 pr-3 pr-xl-4"><div id="related-posts" class="mt-5 mb-2 mb-sm-4"><h3 class="pt-2 mt-1 mb-4 ml-1" data-toc-skip>Further Reading</h3><div class="card-deck mb-4"><div class="card"> <a href="/posts/algorithm-boj-14503/"><div class="card-body"> <em class="small" data-ts="1658123732" data-df="ll" > Jul 18, 2022 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>📄 백준 14503번 - 로봇 청소기 (구현)</h3><div class="text-muted small"><p> 📄 문제 소개 백준 14503번 : 로봇 청소기 링크 : https://www.acmicpc.net/problem/14503 입력 N, M에 따라 N * M 크기의 지도가 주어지고 로봇 청소기의 위치 및 방향이 주어졌다고 했을 때, 로봇 청소기가 동작을 마친 시점 기준 청소한 칸의 개수를 출력하는 문제이다. 📗 문제풀이 과정 🧐 일단 생각...</p></div></div></a></div><div class="card"> <a href="/posts/algorithm-boj-14499/"><div class="card-body"> <em class="small" data-ts="1658128444" data-df="ll" > Jul 18, 2022 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>📄 백준 14499번 - 주사위 굴리기 (구현)</h3><div class="text-muted small"><p> 📄 문제 소개 백준 14499번 : 주사위 굴리기 링크 : https://www.acmicpc.net/problem/14499 입력 N, M에 따라 N * M 크기의 지도가 주어지고 주사위의 초기 위치가 주어졌다고 할 때, 주사위가 정해진 명령 및 규칙에 따라 굴려지면서 변화하는 매 순간의 주사위의 윗 면을 출력하는 문제이다. 📗 문제풀이 ...</p></div></div></a></div><div class="card"> <a href="/posts/algorithm-boj-16509/"><div class="card-body"> <em class="small" data-ts="1658320049" data-df="ll" > Jul 20, 2022 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>📄 백준 16509번 - 장군 (구현, BFS)</h3><div class="text-muted small"><p> 📄 문제 소개 백준 16509번 : 장군 링크 : https://www.acmicpc.net/problem/16509 가로 10 * 세로 9 크기의 장기 판이 주어지고 상의 초기 위치와 왕의 초기 위치가 주어졌을 때, 상이 왕에게 도달할 수 있는 최소 이동 횟수를 출력하는 문제이다. 📗 문제풀이 과정 🧐 일단 생각해 볼 것 장기에 대해서...</p></div></div></a></div></div></div><div class="post-navigation d-flex justify-content-between"> <a href="/posts/algorithm-boj-1091/" class="btn btn-outline-primary" prompt="Older"><p>📄 백준 1091번 - 카드 섞기 (구현)</p></a><div class="btn btn-outline-primary disabled" prompt="Newer"><p>-</p></div></div></div></div><footer class="row pl-3 pr-3"><div class="col-12 d-flex justify-content-between align-items-center text-muted pl-0 pr-0"><div class="footer-left"><p class="mb-0"> © 2022 <a href="https://twitter.com/username">Eojin Choi</a>. <span data-toggle="tooltip" data-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.">Some rights reserved.</span></p></div><div class="footer-right"><p class="mb-0"> Powered by <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> with <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme.</p></div></div></footer></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/algorithm/">algorithm</a> <a class="post-tag" href="/tags/baekjoon/">baekjoon</a> <a class="post-tag" href="/tags/bfs/">bfs</a> <a class="post-tag" href="/tags/2021%EB%85%84/">2021년</a> <a class="post-tag" href="/tags/implementation/">implementation</a> <a class="post-tag" href="/tags/bruteforcing/">bruteforcing</a> <a class="post-tag" href="/tags/prefix-sum/">prefix sum</a> <a class="post-tag" href="/tags/study/">study</a> <a class="post-tag" href="/tags/2022%EB%85%84/">2022년</a> <a class="post-tag" href="/tags/c/">c++</a></div></div></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a><div id="notification" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-animation="true" data-autohide="false"><div class="toast-header"> <button type="button" class="ml-2 ml-auto close" data-dismiss="toast" aria-label="Close"> <span aria-hidden="true">&times;</span> </button></div><div class="toast-body text-center pt-0"><p class="pl-2 pr-2 mb-3"></p><button type="button" class="btn btn-primary" aria-label="Update"> </button></div></div><script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5">Oops! No result founds.</p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script> <script src="https://cdn.jsdelivr.net/combine/npm/magnific-popup@1/dist/jquery.magnific-popup.min.js,npm/lozad/dist/lozad.min.js,npm/clipboard@2/dist/clipboard.min.js"></script> <script src="https://cdn.jsdelivr.net/combine/npm/dayjs@1/dayjs.min.js,npm/dayjs@1/locale/en.min.js,npm/dayjs@1/plugin/relativeTime.min.js,npm/dayjs@1/plugin/localizedFormat.min.js"></script> <script defer src="/assets/js/dist/post.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.bundle.min.js"></script> <script defer src="/app.js"></script>
